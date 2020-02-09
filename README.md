@@ -8,10 +8,10 @@ openshift-cam: Openshift-cam
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.openshift-cam](https://galaxy.ansible.com/devops-toolbox.openshift-cam)
+[https://galaxy.ansible.com/devopstoolbox.openshift-cam](https://galaxy.ansible.com/devopstoolbox.openshift-cam)
 
 ```bash
-ansible-galaxy install devops-toolbox.openshift-cam
+ansible-galaxy install devopstoolbox.openshift-cam
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: openshift-cam is configured
       import_role:
-        name: devops-toolbox.openshift-cam
+        name: devopstoolbox.openshift-cam
       vars:
         openshift-cam_packages_state: present
         openshift-cam_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
