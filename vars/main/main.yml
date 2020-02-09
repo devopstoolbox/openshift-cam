@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+openshift-cam_repos_create: "{{ _openshift-cam_repos_create['all']
+  | union ( _openshift-cam_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+openshift-cam_repos_download: "{{ _openshift-cam_repos_download['all']
+  | union ( _openshift-cam_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+openshift-cam_templates_copy: "{{ _openshift-cam_templates_copy['all']
+  | union ( _openshift-cam_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+openshift-cam_services_enable: "{{ _openshift-cam_services_enable['all']
+  | union ( _openshift-cam_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+openshift-cam_selinux_enable: "{{ _openshift-cam_selinux_enable['all']
+  | union ( _openshift-cam_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+openshift-cam_packages_remove: "{{ _openshift-cam_packages_remove['all']
+  | union ( _openshift-cam_packages_remove[my_os]
+  | default([]) ) }}"
+openshift-cam_packages_repos: "{{ _openshift-cam_packages_repos['all']
+  | union ( _openshift-cam_packages_repos[my_os]
+  | default([]) ) }}"
+openshift-cam_packages_prereq: "{{ _openshift-cam_packages_prereq['all']
+  | union ( _openshift-cam_packages_prereq[my_os]
+  | default([]) ) }}"
+openshift-cam_packages_install: "{{ _openshift-cam_packages_install['all']
+  | union ( _openshift-cam_packages_install[my_os]
+  | default([]) ) }}"

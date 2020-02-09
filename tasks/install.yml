@@ -1,0 +1,27 @@
+---
+# Install openshift-cam packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ openshift-cam_packages_remove }}"
+    state: absent
+  become: true
+  when: openshift-cam_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ openshift-cam_packages_repos }}"
+    state: "{{ openshift-cam_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ openshift-cam_packages_prereq }}"
+    state: "{{ openshift-cam_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ openshift-cam_packages_install }}"
+    state: "{{ openshift-cam_packages_state }}"
+  become: true

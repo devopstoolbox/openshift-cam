@@ -1,0 +1,19 @@
+---
+# defaults file for openshift-cam
+
+openshift-cam_packages_state: present
+openshift-cam_remove_packages: true
+openshift-cam_enable_service: true
+openshift-cam_enable_selinux: true
+openshift-cam_copy_templates: true
+openshift-cam_firewall_configure: true
+openshift-cam_firewall_rules:
+  - service: ssh
+  - port: 3389
+openshift-cam_users:
+  - user: devops
+    group: docker
+openshift-cam_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true
